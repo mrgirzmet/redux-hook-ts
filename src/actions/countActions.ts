@@ -4,6 +4,4 @@ export interface IIncrementCountAction {
 export interface IDecrementCountAction {
   readonly type: 'DECREMENT';
 }
-export type CountActions =
-| IIncrementCountAction
-| IDecrementCountAction
+export type CountActions = IIncrementCountAction | IDecrementCountAction;

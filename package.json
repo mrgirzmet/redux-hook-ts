@@ -19,13 +19,11 @@
     "typescript": "^3.7.5"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "start": "rescripts start",
+    "build": "rescripts build",
+    "test": "rescripts test",
+    "eject": "rescripts eject",
+    "format": "prettier --write src/**/*.{js,jsx,ts,tsx}"
   },
   "browserslist": {
     "production": [
@@ -40,7 +38,22 @@
     ]
   },
   "devDependencies": {
+    "@rescripts/cli": "0.0.14",
+    "@rescripts/rescript-env": "0.0.12",
+    "@rescripts/rescript-use-eslint-config": "0.0.11",
     "@types/redux-devtools-extension": "^2.13.2",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-airbnb-typescript-prettier": "^3.1.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-jsx-a11y": "^6.3.0",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^4.0.0",
+    "prettier": "^2.0.5",
+    "react-app-rewired": "^2.1.6",
     "redux-devtools-extension": "^2.13.8"
-  }
+  },
+  "rescripts": [
+    "env"
+  ]
 }
