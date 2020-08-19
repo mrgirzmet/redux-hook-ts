@@ -1,4 +1,4 @@
-import { CountActions } from '../actions/countActions';
+import { CountActions } from '../actions/countActionTypes';
 
 type CountState = {
   count: number;

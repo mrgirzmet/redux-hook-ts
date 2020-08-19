@@ -1,8 +1,11 @@
 import React, { Dispatch } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Button, TextField } from '@material-ui/core';
 import { AppState } from './reducers/rootReducer';
-import { CountActions } from './actions/countActions';
-import { NameActions } from './actions/nameActions';
+import { CountActions } from './actions/countActionTypes';
+import { NameActions } from './actions/nameActionTypes';
+import { setName } from './actions/nameActions';
+import { incrementCount, decrementCount } from './actions/incrementActions';
 
 // interface MyProps {}
 
@@ -12,27 +15,31 @@ const App: React.FC = ({}) => {
   const countDispatch = useDispatch<Dispatch<CountActions>>();
   const nameDispatch = useDispatch<Dispatch<NameActions>>();
   const handleIncrement = (): void => {
-    countDispatch({ type: 'INCREMENT' });
+    countDispatch(incrementCount());
   };
   const handleDecrement = (): void => {
-    countDispatch({ type: 'DECREMENT' });
+    countDispatch(decrementCount());
   };
   const handleSetName = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    nameDispatch({ type: 'SET_NAME', payload: e.target.value });
+    nameDispatch(setName(e.target.value));
   };
   return (
     <div>
       <div>
-        <button type="submit" onClick={handleIncrement}>
+        <Button variant="contained" color="primary" onClick={handleIncrement}>
           +
-        </button>
+        </Button>
         {count}
-        <button type="submit" onClick={handleDecrement}>
+        <Button variant="contained" color="primary" onClick={handleDecrement}>
           -
-        </button>
+        </Button>
       </div>
       <div>
-        <input type="text" onChange={handleSetName} />
+        <TextField
+          id="standard-basic"
+          label="Standard"
+          onChange={handleSetName}
+        />
         {name}
       </div>
     </div>

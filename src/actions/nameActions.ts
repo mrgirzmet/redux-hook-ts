@@ -1,5 +1,5 @@
-export interface ISetNameAction {
-  readonly type: 'SET_NAME';
-  payload: string;
-}
-export type NameActions = ISetNameAction;
+import { SetNameAction } from './nameActionTypes';
+
+export const setName = (value: string): SetNameAction => {
+  return { type: 'SET_NAME', payload: value };
+};

@@ -1,4 +1,4 @@
-import { NameActions } from '../actions/nameActions';
+import { NameActions } from '../actions/nameActionTypes';
 
 type NameState = {
   name: string;

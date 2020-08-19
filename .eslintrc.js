@@ -3,6 +3,7 @@ module.exports = {
     browser: true,
     es2020: true,
     node: true,
+    jest: true
   },
   extends: ['airbnb-typescript-prettier'],
   parser: '@typescript-eslint/parser',
@@ -19,8 +20,9 @@ module.exports = {
   ],
   rules: {
     '@typescript-eslint/explicit-function-return-type': 2,
-    'no-empty-pattern': 0,
+    'no-empty-pattern': 1,
     'linebreak-style': 0,
-    '@typescript-eslint/no-empty-interface': 1
+    '@typescript-eslint/no-empty-interface': 1,
+    'import/prefer-default-export': 1
   },
 };
